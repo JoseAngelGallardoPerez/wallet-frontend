@@ -1,0 +1,65 @@
+options:
+  docker: true
+
+image: warnerbros/node-awscli:12-alpine
+
+definitions:
+
+  services:
+    docker:
+      memory: 4096
+
+  steps:
+    - step: &build-prod
+        size: 2x
+        name: Build prod
+        caches:
+          - node
+        script:
+          - npm cache verify
+          - npm install
+          - npm run build
+        artifacts:
+          - dist/**
+
+    - step: &deploy-to-demo01
+        name: Deploy to demo01
+        size: 2x
+        deployment: demo01
+        script:
+          - ./deploy_to_s3.sh
+
+    - step: &build-docker-image
+        name: Build docker image
+        caches:
+          - docker
+        image: banst/awscli:1.18.63
+        size: 2x
+        services:
+          - docker
+        script:
+          - export IMAGE_TAG="${BITBUCKET_TAG:-$BITBUCKET_COMMIT}"
+          # Build image and tag it with hash commit
+          - docker build -f docker/Dockerfile . -t ${AWS_REGISTRY_URL}:${IMAGE_TAG}
+          # Login to the ECR
+          - eval $(aws ecr get-login --region ${AWS_DEFAULT_REGION} --no-include-email)
+          # Push the image to ECR
+          - docker push ${AWS_REGISTRY_URL}:${IMAGE_TAG}
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *build-prod
+
+  tags:
+    '*.*.*':
+      - step: *build-docker-image
+
+  branches:
+    demo01:
+      - step: *build-prod
+      - step: *deploy-to-demo01
+    develop:
+      - step: *build-docker-image
+    'release/*':
+      - step: *build-docker-image

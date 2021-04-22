@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "sign_in": {
+      "ad_header_title": "Get instant <br /> access to financing <br /> opportunities.",
+      "main_header_title": "Sign in to your profile",
+      "field_login": "Email or Phone",
+      "field_password": "Password",
+      "field_remember_me": "Remember password",
+      "btn_sign_id": "Sign In Now",
+      "forgot_password_text": "Forgot your password?",
+      "link_reset_password": "Reset password",
+      "sign_up_text": "Don't have profile yet?",
+      "link_sign_up": "Sign Up"
+    }
+  }
+}

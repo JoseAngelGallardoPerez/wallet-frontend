@@ -1,0 +1,106 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "paths": {
+      "@lib/*": [
+        "src/app/*"
+      ],
+      "@extensions/*": [
+        "src/app/extensions/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@interfaces/*": [
+        "src/app/core/interfaces/*"
+      ],
+      "@enums/*": [
+        "src/app/core/enums/*"
+      ],
+      "@models/*": [
+        "src/app/core/models/*"
+      ],
+      "@pipes/*": [
+        "src/app/core/pipes/*"
+      ],
+      "@resolvers/*": [
+        "src/app/core/resolvers/*"
+      ],
+      "@helpers/*": [
+        "src/app/core/helpers/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@validators/*": [
+        "src/app/core/validators/*"
+      ],
+      "@layouts/*": [
+        "src/app/components/layouts/*"
+      ],
+      "@components/*": [
+        "src/app/components/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@request-models/*": [
+        "src/app/core/request-models/*"
+      ],
+      "@constants/*": [
+        "src/app/core/constants/*"
+      ],
+      "@spirits/*": [
+        "src/app/plug-ins/spirits/*"
+      ],
+      "@shared-modules/*": [
+        "src/app/modules/shared/*"
+      ],
+      "default-application/*": [
+        "projects/default-application/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@default-application-app/*": [
+        "projects/default-application/src/app/*"
+      ],
+      "@default-routers/*": [
+        "projects/default-application/src/app/routers/*"
+      ]
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom",
+      "esnext",
+      "esnext.array"
+    ]
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true
+  }
+}
