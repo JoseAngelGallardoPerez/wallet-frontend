@@ -1,0 +1,78 @@
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 17px;
+  width: 17px;
+
+  .checkbox-checkmark:not(.radio) {
+    border-radius: 2px !important;
+  }
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+  transition: .5s;
+}
+
+.disable {
+  background-color: var(--tabsBottomBorderColor);
+  cursor: not-allowed;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox-checkmark {
+  &:not(.radio) {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+  content: ' ';
+  position: absolute;
+  display: none;
+}
+
+.checkbox-checkmark:not(.radio):after {
+  content: '\f26b';
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-checkmark:after {
+  left: 2px;
+  top: 0;
+  color: #000000;
+  font-size: 15px;
+}

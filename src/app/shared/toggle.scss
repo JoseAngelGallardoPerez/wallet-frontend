@@ -1,0 +1,143 @@
+@import 'variables';
+
+// TOGGLE STYLES
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  width: 27px;
+  height: 16px;
+  top: 0px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  font-size: 13px;
+  background: none;
+  border: 1px solid var(--toggleUnchecked);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-color: var(--toggleUnchecked);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider::after {
+  top: 0 !important;
+  left: auto;
+  position: relative;
+  color: #fff;
+  text-align: right;
+  display: block;
+  padding-right: 13px;
+  line-height: 13px;
+  height: 13px;
+  content: attr(data-unchecked);
+}
+
+input:checked + .slider::after {
+  text-align: left;
+  padding-left: 10px;
+}
+
+input:checked + .slider {
+  background: none;
+  border-color: var(--mainColor);
+
+  &:before {
+    border-color: var(--mainColor);
+  }
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--mainColor);
+}
+
+input:checked + .slider:before {
+  background-color: var(--mainColor);
+  -webkit-transform: translateX(11px);
+  -ms-transform: translateX(11px);
+  transform: translateX(11px);
+}
+
+input:checked + .slider:after {
+  color: #fff;
+  content: attr(data-checked);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+// TOGGLE BUTTON
+
+.switch-button {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  span {
+    color: var(--mainColor);
+  }
+
+  .switch-button__notActive {
+    display: inline-block;
+  }
+
+  .switch-button__active {
+    display: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    width: 60px;
+    height: 24px;
+    background: none;
+    vertical-align: center;
+    text-align: -webkit-center;
+  }
+
+  input:checked ~ .switch-button__notActive {
+    display: none;
+  }
+
+  input:checked ~ .switch-button__active {
+    display: inline-block;
+    background: var(--mainColor);
+    border-radius: 2px;
+    color: var(--colorWhite)
+  }
+}

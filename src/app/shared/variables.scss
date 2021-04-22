@@ -1,0 +1,278 @@
+// color
+$textColorDim: #b6b6b6;
+$textColorMedium: #a3a3a3;
+$textColorError: #c94b4b;
+$textColorMessage: #C96E4B;
+$textColorPlaceholder: #b6b6b6;
+$textColorSuccess: #94c817;
+$textColorPending: #FED603;
+$textColorWaiting: #8098A3;
+$textColorDark: #4a4a4a;
+$textColorMainDark: #484848;
+$textColorGray: #9b9b9b;
+$borderColorAside: #7c7c7c;
+$backgroundColorAsideHover: rgba(0, 0, 0, 0.06);
+$borderColorDim: #e3e3e3;
+$borderColorError: #c94b4b;
+$borderColorSuccess: #94c817;
+$borderColorMain: #0D42FB;
+$borderColorFilter: #DBDCDB;
+$backgroundColorAside: #5b5b5b;
+$backgroundColorContent: #f5f5f5;
+$backgroundColorDim: #e3e3e3;
+$backgroundColorHeader: #ffffff;
+$backgroundColorInput: #ffffff;
+$backgroundColorSection: #ffffff;
+$backgroundColorSortBar: #eeeeee;
+$backgroundColorTableHeading: #DBDCDB;
+$backgroundColorTRPrimary: #f9f9f9;
+$backgroundColorTRSecondary: #ffffff;
+$backgroundColorPagination: #ffffff;
+$backgroundColorPaginationActive: #7a7a7a;
+$buttonHover: #90c710;
+$bottomLineColor: #d8d8d8;
+$backgroundColorCircleMenu: #cccccc;
+$backgroundButtonInInput: #f1f1f1;
+$btnColor: #E9E9E9;
+$btnColorHover: #f5f5f5;
+$backgroundColorMessageMenu: #fafafa;
+$btnbgColor: #fafafa;
+$iconsColor: #BEBEBE;
+$inputLabelColor: #5b5b5b;
+$checkboxTitleColor: #5b5b5b;
+$settingsIconColor: #dadada;
+// font
+$fontXXXXSmall: 13px;
+$fontXXXSmall: 14px;
+$fontXXSmall: 15px;
+$fontXSmall: 16px;
+$fontSmall: 17px;
+$fontMedium: 18px;
+$fontLarge: 20px;
+$fontXLarge: 22px;
+$fontXXLarge: 24px;
+$fontXXXLarge: 28px;
+
+// function
+// SCSS
+@function darker($color, $tone) {
+  $adjust: -16*$tone;
+  @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}
+
+$letterSpacing: 0.05px;
+
+// screen size
+$mobileSize: 767px;
+$tabletMin: 991px;
+$tabletMid: 1191px;
+$desktopMin: 1280px;
+
+//Velmie Wallet Color
+$backgroundColorSignUp: #f7f6f6;
+$textColorLabel: #c4c4c4;
+$textColorContent: #999;
+$borderColorDefault: #f7f6f6;
+$borderColorLine: #e0e0e0;
+
+$md-checkbox-border-color: #cfcfcf;
+$md-checkbox-border-color-disabled: rgba(0, 0, 0, 0.26);
+$md-checkbox-checked-color-disabled: rgba(0, 0, 0, 0.26);
+
+//checkbox setting
+$md-checkbox-size: 1.1em;
+$md-checkbox-padding: .25em;
+$md-checkbox-border-width: 1px;
+$md-checkbox-border-radius: 0.125em;
+$md-checkmark-width: 0.125em;
+$md-checkmark-color: #fff;
+$md-checkbox-label-padding: .75em;
+
+:root[theme='velmie'] {
+  --mainFont: 'SF Pro Display';
+  --secondFont: 'Graphik';
+
+  --mainColor: #0D42FB;
+  --errorColor: #e54141;
+  --disableColorButtom: #B1B1B3;
+  --colorDarkGrey: #333333;
+  --colorGrey: #eeeeee;
+  --colorBlack: #000000;
+  --colorWhite: #ffffff;
+  --mediumDarkGrey: #484848;
+  --toggleUnchecked: #CFCFCF;
+  --lightGrey: #999999;
+  --whiteSmoke: #F7F6F6;
+  --colorCheckboxHover: #F6F6F6;
+
+  --textColorPrimary: #c4c4c4;
+  --borderColorLine: #e0e0e0;
+
+  --selectColorPlaceholder: #c4c4c4;
+  --textColorMainDark: #484848;
+  --textcolorMessage: #666666;
+  --defaultColorIcon: #c4c4c4;
+  --tabsBottomBorderColor: #EEEEEE;
+  --accordionBackground: rgba(246, 246, 246, 0.5);
+  --boxShadowColor: rgba(0, 0, 0, 0.05);
+  --chekboxBorderBottom: #EEEEEE;
+
+  //background
+  --backgroundColorTabCheked: #eeeeee;
+  --authBackground: #e5e5e5;
+  --backgroundColorTabUncheked: #ffffff;
+  --whiteBackground: #ffffff;
+  --backgroundInput: #f7f6f6;
+  --backgroundColorMessageMenu: #eeeeee;
+  --backgroundColorAside: #27282C;
+  --backgroundColorAsideSelected: rgba(255, 255, 255, 0.1);
+  --backgroundProgressTrack: #eeeeee;
+  --backgroundProgressStepPass: #cce8d0;
+  --backgroundColorError: #e54141;
+  --backgroundColorTRPrimary: #f9f9f9;
+
+
+  //button
+  --backgrounDefaultBackgroundButton: #229932;
+  --backgrounDeleteBackgroundButton: #dd6767;
+  --backgroundButtonHover: #0a811a;
+  //size
+  --cartWidth: 605px;
+  --formWidth: 321px;
+  --fieldContainerMargin: 0 0 24px;
+  --formMargin: 80px 10px 80px !important;
+
+  //font-size
+  --fontXXXXXSmall: 12px;
+  --fontXXXXSmall: 13px;
+  --fontXXXSmall: 14px;
+  --fontXXSmall: 15px;
+  --fontXSmall: 16px;
+  --fontSmall: 17px;
+  --fontMedium: 18px;
+  --fontLarge: 20px;
+  --fontXLarge: 22px;
+  --fontXXLarge: 24px;
+  --fontXXXLarge: 28px;
+  --fontXXXXLarge: 30px;
+
+  //DatePecker
+  --fontSizeDatepickerTitle: 17px;
+  --fontSizeDatepickerDay: 12px;
+  --fontSizeDatepickerDayName: 12px;
+  --colorDatepickerTitle: #333333;
+  --colorDatepickerDayName: #333333;
+  --colorDatepickerDay: #333333;
+  --colorDatepickerDayToday: #333333;
+  --colorDatepickerDaySelected: #333333;
+  --colorDatepickerDisabled: #C4C4C4;
+  --backgroundColorDateickerDayToday: #EEF2FF;
+  --backgroundColorDateickerDaySelected: #7493FF;
+  --backgroundColorDateickerYearSelected: #EEF2FF;
+
+  //selectSort
+  --backgroundSelectSortDropdownPanelHover: #f7f6f6;
+  --backgroundSelectSortDropdownPanel: #ffffff;
+  --fontSizeSelectSortDropdownPanel: 14px;
+  --boxShadowColorSelectSortDropdownPanel: rgba(0, 0, 0, 0.05);
+  --colorSelectSortDropDownPanel: #484848;
+}
+
+
+:root {
+  --mainFont: 'SF Pro Display';
+  --secondFont: 'Graphik';
+
+  --disableColorButtom: #B1B1B3;
+  --mainColor: #0D42FB;
+  --errorColor: #e54141;
+  --colorDarkGrey: #333333;
+  --colorSubtitleGrey: #999999;
+  --colorSubtitleBlack: #333333;
+  --colorBlack: #000000;
+  --colorWhite: #ffffff;
+  --mediumDarkGrey: #484848;
+  --toggleUnchecked: #CFCFCF;
+  --lightGrey: #999999;
+  --whiteSmoke: #F7F6F6;
+  --colorCheckboxHover: #F6F6F6;
+
+  --textColorPrimary: #c4c4c4;
+  --borderColorLine: #e0e0e0;
+  --borderBottomColorLine: #EEEEEE;
+
+  --selectColorPlaceholder: #c4c4c4;
+  --textColorMainDark: #484848;
+  --textcolorMessage: #666666;
+  --defaultColorIcon: #c4c4c4;
+
+  --colorIconTransaction: #7493FF;
+  --radioButtonColor: #7493FF;
+  --tabsBottomBorderColor: #EEEEEE;
+  --accordionBackground: rgba(246, 246, 246, 0.5);
+  --chekboxBorderBottom: #EEEEEE;
+
+  //background
+  --backgroundColorTabCheked: #eeeeee;
+  --authBackground: #e5e5e5;
+  --backgroundColorTabUncheked: #ffffff;
+  --whiteBackground: #ffffff;
+  --backgroundInput: #f7f6f6;
+  --backgroundColorMessageMenu: #eeeeee;
+  --backgroundColorAside: #27282C;
+  --backgroundColorAsideSelected: rgba(255, 255, 255, 0.1);
+  --backgroundProgressTrack: #eeeeee;
+  --backgroundProgressStepPass: #cce8d0;
+  --backgroundColorError: #e54141;
+  --backgroundColorTRPrimary: #f9f9f9;
+
+  //button
+  --backgrounDefaultBackgroundButton: #229932;
+  --backgrounDeleteBackgroundButton: #dd6767;
+  --backgroundButtonHover: #0a811a;
+
+  //size
+  --cartWidth: 605px;
+  --formWidth: 321px;
+  --fieldContainerMargin: 0 0 24px;
+  --formMargin: 80px 10px 80px !important;
+
+  //font-size
+  --fontXXXXXSmall: 12px;
+  --fontXXXXSmall: 13px;
+  --fontXXXSmall: 14px;
+  --fontXXSmall: 15px;
+  --fontXSmall: 16px;
+  --fontSmall: 17px;
+  --fontMedium: 18px;
+  --fontLarge: 20px;
+  --fontXLarge: 22px;
+  --fontXXLarge: 24px;
+  --fontXXXLarge: 28px;
+  --fontXXXXLarge: 30px;
+
+  //DatePecker
+  --fontSizeDatepickerTitle: 17px;
+  --fontSizeDatepickerDay: 12px;
+  --fontSizeDatepickerDayName: 12px;
+  --colorDatepickerTitle: #333333;
+  --colorDatepickerDayName: #333333;
+  --colorDatepickerDay: #333333;
+  --colorDatepickerDayToday: #333333;
+  --colorDatepickerDaySelected: #FFFFFF;
+  --colorDatepickerDisabled: #C4C4C4;
+  --backgroundColorDateickerDayToday: #EEF2FF;
+  --backgroundColorDateickerDaySelected: #229932;
+  --backgroundColorDateickerYearSelected: #EEF2FF;
+
+
+  //Accordion
+  --backgroundColorAccordionHeader: rgba(247, 246, 246, 0.5);;
+
+  //selectSort
+  --backgroundSelectSortDropdownPanelHover: #f7f6f6;
+  --backgroundSelectSortDropdownPanel: #ffffff;
+  --fontSizeSelectSortDropdownPanel: 14px;
+  --boxShadowColorSelectSortDropdownPanel: rgba(0, 0, 0, 0.05);
+  --colorSelectSortDropDownPanel: #484848;
+}

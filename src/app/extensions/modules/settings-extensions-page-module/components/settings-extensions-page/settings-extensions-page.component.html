@@ -1,0 +1,55 @@
+<div *ngIf="listExtensions.length" class="container">
+
+  <form [formGroup]="extensionsForm" (ngSubmit)="submit()" novalidate class="form">
+    <div class="table-content">
+
+      <div class="line sub-heading"> Modules</div>
+
+      <div class="information-fields">
+        <div class="block-line">
+          <div class="block">
+
+            <div class="row text" *ngFor="let extension of listExtensions; ">
+              <span class="title checkbox-name"> {{ extension.name }}</span>
+              <label (click)="getSettingExtension(extension)" class="settings-icon" [class.disable]="!extension.hasSettings">
+
+                <img src="assets/icons/settings-pale-icon.svg" alt="settings-icon">
+
+              </label>
+              <div class="fields-container__row row-switch main_color">
+                <div class="fields-container__row__switch">
+                  <label class="switch">
+                    <input type="checkbox" formControlName="{{ extension.serviceName }}"/>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div></div>
+      <div>
+        <a class="def-btn-cancel" (click)="resetFormData()"> Cancel </a>
+        <button class="def-btn-success btn-long main_color"> Save Changes </button>
+      </div>
+    </div>
+
+    <app-setting-extensions-popup *ngIf="dataForPopup"
+                                  [settingsData]="dataForPopup"
+                                  [show]="showPopup"
+                                  (hidePopup)="onHidePopup()"
+                                  [serviceName]="serviceName"
+                                  [headingMessage]="titleForPopup"
+    >
+    </app-setting-extensions-popup>
+  </form>
+</div>
+
+
+

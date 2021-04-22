@@ -1,0 +1,63 @@
+<div *ngIf="show" class="popup-wrapper">
+  <div class="container content border_color-main_color">
+
+    <div class="popup-header background_color-main_color" *ngIf="headingMessage">
+      <h1 class="heading">
+        {{ headingMessage }}
+      </h1>
+    </div>
+
+    <form class="form" novalidate (submit)="submit()" [formGroup]="settingsExtensionsForm">
+      <div class="popup-main">
+
+        <div *ngIf="settingsTitle" class="line sub-heading"> {{ settingsTitle }}</div>
+
+        <div *ngFor="let setting of settingsData" class="popup-line">
+
+          <div class="form__row">
+            <span class="row__title required"> {{ setting.label }} </span>
+
+            <div class="one-in-row" [ngSwitch]="setting.inputType">
+              <ng-template [ngSwitchCase]="'input'">
+                <input
+                  class="native-input"
+                  formControlName="{{ setting.name }}"
+                  placeholder="{{ setting.label }}"
+                  appErrorHandle
+                />
+              </ng-template>
+
+              <ng-template [ngSwitchCase]="'select'">
+                <app-simple-select
+                  [form]="settingsExtensionsForm"
+                  [controlName]="setting.name"
+                  [title]="setting.label"
+                  [placeholder]="setting.label"
+                  [items]="setting.selectItems"
+                  [bindLabel]="'value'"
+                  [bindValue]="'key'"
+                >
+                </app-simple-select>
+              </ng-template>
+
+              <ng-template ngSwitchDefault>
+                <input
+                  class="native-input"
+                  formControlName="{{ setting.name }}"
+                  placeholder="{{ setting.label }}"
+                  appErrorHandle
+                />
+              </ng-template>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom bottom_flex_end">
+          <a class="def-btn-cancel" (click)="cancel()"> Cancel </a>
+          <button class="def-btn-success background_color-main_color"> Save Changes</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

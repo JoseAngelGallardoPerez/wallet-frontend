@@ -1,0 +1,33 @@
+<ng-container *ngIf="showCaptchaFields">
+  <div class="fields-container__row">
+    <label for="captcha" class="fields-container__row__label required">
+      {{'sign up.Enter the text in the image' | translate}}
+    </label>
+
+    <div class="input-field">
+      <input
+        type="text"
+        class="fields-container__row__input native-input"
+        id="captcha"
+        appErrorHandle
+        [formControl]="form.get('captchaValue')"
+      >
+    </div>
+  </div>
+
+  <div class="fields-container__row">
+    <label class="fields-container__row__label captcha-img-label"></label>
+
+    <div class="captcha-img-container" *ngIf="captchaImgBase64">
+      <img class="captcha-img" [src]="captchaImgBase64" [alt]="'sign up.CAPTCHA IMG' | translate"/>
+
+      <span
+        class="fas fa-sync"
+        [class.fa-sync-disable]="tempBlockButtonReset"
+        [title]="tempBlockButtonReset ? 'Waiting for' : ('sign up.Reset CAPTCHA' | translate)"
+        (click)="captchaRefresh()"
+      >
+      </span>
+    </div>
+  </div>
+</ng-container>

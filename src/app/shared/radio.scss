@@ -1,0 +1,70 @@
+/* Customize the label (the container) */
+@import '../shared/variables';
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.options-container {
+  &__label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--fontXXXXSmall);
+    color: var(--colorDarkGrey);
+  }
+}
+
+
+.radio-container input {
+  top: 0px;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  margin: 1.75px;
+}
+
+.radio-check {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: .5s;
+  border-radius: 50%;
+}
+
+.radio-container input:checked ~ .radio-check {
+  border-color: var(--mainColor);
+
+  &:before {
+    content: "";
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    margin: 3px;
+  }
+}
+
+.radio-check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .radio-check:after {
+  display: block;
+}

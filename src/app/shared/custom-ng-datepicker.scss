@@ -1,0 +1,157 @@
+@import 'variables';
+
+.own-datepicker {
+
+  .ngx-datepicker-container {
+
+    .ngx-datepicker-calendar-container {
+      width: 231px !important;
+      border: none !important;
+      box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.05) !important;
+      border-radius: 2px !important;
+      height: auto !important;
+
+      .topbar-container {
+        padding: 20px 0 17px 23px !important;
+        position: relative !important;
+        border-bottom: none !important;
+        width: 149px !important;
+
+        svg {
+          position: relative;
+          width: 41px;
+          height: 100%;
+          content: "sdsd";
+
+          g {
+            display: none;
+          }
+
+          &:first-child {
+            position: absolute;
+            top: 0;
+            right: -41px;
+            z-index: 1;
+          }
+
+          &:last-child {
+            position: absolute;
+            top: 0;
+            right: -82px;
+          }
+        }
+
+        .topbar-title {
+          width: 100% !important;
+          font-family: var(--mainFont);
+          font-style: normal;
+          font-weight: 500 !important;
+          font-size: 14px !important;
+          line-height: 17px;
+          position: relative;
+          z-index: 0;
+
+          &:before {
+            content: url("src/assets/icons/month-arrow-left.svg");
+            position: absolute;
+            height: 100%;
+            width: auto;
+            right: -25px;
+          }
+
+          &:after {
+            content: url("src/assets/icons/month-arrow-right.svg");
+            position: absolute;
+            height: 100%;
+            width: auto;
+            right: -66px;
+          }
+        }
+      }
+
+      .main-calendar-container {
+        padding: 0 16px 13px !important;
+
+        .main-calendar-day-names {
+          padding: 4px 0px 0px;
+
+          .day-name-unit {
+            text-transform: capitalize !important;
+            color: var(--colorDatepickerDayName);
+            font-size: var(--colorDatepickerDayName);
+          }
+        }
+
+        .main-calendar-days {
+          padding: 0 !important;
+
+          .day-unit {
+            height: 24px !important;
+            margin: 3px 0 !important;
+            border-radius: 16px !important;
+            font-size: var(--fontSizeDatepickerDay) !important;
+            color: var(--colorDatepickerDay);
+
+            &.is-selected {
+              color: var(--colorDatepickerDaySelected) !important;
+              background-color: var(--backgroundColorDateickerDaySelected) !important;
+            }
+
+            &.is-today {
+              color: var(--colorDatepickerDayToday) !important;
+              background-color: var(--backgroundColorDateickerDayToday) !important;
+
+            }
+
+            &.is-disabled {
+              color: var(--colorDatepickerDisabled) !important;
+            }
+          }
+        }
+      }
+
+      .slimscroll-wrapper {
+        height: 186px !important;
+        padding-bottom: 13px !important;
+        overflow: hidden !important;
+
+        .main-calendar-years {
+          margin-top: 18px;
+          overflow: hidden !important;
+          height: 155px !important;
+          padding-right: 6px !important;
+
+          .year-unit {
+            width: 44px !important;
+            height: 24px !important;
+            margin: 3px 2px !important;
+            font-size: 10px !important;
+            color: var(--colorDatepickerDay);
+
+          }
+
+          .year-unit.is-selected {
+            background: var(--backgroundColorDateickerYearSelected) !important;
+            border-radius: 14px !important;
+            font-size: 10px !important;
+            color: var(--colorDatepickerDay) !important;
+          }
+
+
+          span {
+
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+.own-datepicker dateFrom {
+  &.is-selected {
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+  }
+}

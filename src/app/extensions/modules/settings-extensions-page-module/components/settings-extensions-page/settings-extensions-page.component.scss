@@ -1,0 +1,68 @@
+@import 'variables';
+
+.information-fields .block-line .block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 700px;
+  @media (min-width: $mobileSize) {
+    flex-direction: row;
+  }
+  :nth-child(odd) {
+    margin-right: 4%;
+  }
+  .row {
+    max-width: 400px;
+    width: 100%;
+    @media (min-width: $mobileSize) {
+      width: 48%;
+    }
+  }
+
+  .checkbox-name {
+    text-transform: capitalize;
+  }
+}
+
+.table-content {
+  padding-top: 5px;
+}
+
+.settings-icon {
+  cursor: pointer;
+  color: $settingsIconColor;
+}
+
+.settings-label::before {
+  display: inline-block;
+  position: relative;
+  font-family: "Icon", Helvetica, sans-serif;
+  vertical-align: sub;
+  width: 32px;
+  text-align: right;
+  cursor: pointer;
+  @media (min-width: 768px) and (max-width: 1191px) {
+    margin-right: 8px;
+  }
+}
+
+.settings::before {
+  font-size: 25px;
+  content: '\e907';
+  vertical-align: middle;
+  margin-bottom: 3px;
+  color: inherit;
+}
+
+.cursor-disable::before {
+  cursor: not-allowed;
+}
+
+.disable {
+  cursor: not-allowed;
+}
+
+.sub-heading {
+  margin-top: 0 !important;
+}
