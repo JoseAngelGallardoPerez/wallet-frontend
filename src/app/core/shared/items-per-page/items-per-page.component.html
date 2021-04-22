@@ -1,0 +1,14 @@
+<div class="per-page-select">
+  <span class="mobile-hide">Show</span>
+  <div class="page-select-container">
+    <ng-select class="page-select"
+               title="Pages"
+               [ngModel]='perPage'
+               [searchable]="false"
+               [clearable]="false"
+               (change)="selectCount($event)"
+               [items]="itemsCount">
+    </ng-select>
+  </div>
+  <span class="mobile-hide">per page</span>
+</div>
