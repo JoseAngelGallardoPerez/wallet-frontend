@@ -1,0 +1,15 @@
+<div class="date-term-container__datepicker__icon">
+  <div
+    class="calendar-icon"
+    *ngIf="!form.get(this.controlName).value; else close_btn"
+    click-stop-propagation
+    (click)="openCalendar()"
+  >
+  </div>
+
+  <ng-template #close_btn>
+    <div class="close-btn-wrapper" (click)="clearDatepicker()">
+      <span class="close-btn"></span>
+    </div>
+  </ng-template>
+</div>

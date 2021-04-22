@@ -1,0 +1,28 @@
+@import "variables";
+:host {
+  display: flex;
+}
+
+.crumb {
+  color: #333;
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--fontLarge);
+  line-height: 22px;
+  text-transform: capitalize;
+
+  &:not(:last-of-type) {
+    &:after {
+      content: '/';
+      margin: 0 10px;
+    }
+  }
+
+  &:last-of-type {
+    font-weight: 600;
+  }
+
+  &:first-of-type {
+    color: #333;
+  }
+}
