@@ -1,0 +1,29 @@
+{
+    "extends": [
+        "../tslint.json",
+        "tslint-eslint-rules"
+    ],
+    "rules": {
+      "directive-selector": [
+        false,
+        "attribute",
+        "app",
+        "camelCase"
+      ],
+      "component-selector": [
+        true,
+        "element",
+        "app",
+        "kebab-case"
+      ],
+      "object-curly-spacing": true,
+      "no-consecutive-blank-lines": true,
+      "no-constant-condition": true,
+      "no-control-regex": true,
+      "no-duplicate-case": true,
+      "no-output-on-prefix": false,
+      "no-empty-character-class": true,
+      "no-ex-assign": true,
+      "no-extra-boolean-cast": true
+    }
+}
